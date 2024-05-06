@@ -36,4 +36,4 @@ yarn-error.*
 
 #custom
 eas.json
-pakcage-lock.json
+package-lock.json
