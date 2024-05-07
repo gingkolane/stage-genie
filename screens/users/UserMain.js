@@ -2,10 +2,15 @@ import * as React from "react";
 import { StyleSheet, View } from "react-native";
 import NavBarTop from "../../components/NavBarTop";
 import NavBarBottom from "../../components/NavBarBottom";
-import { Padding, Color, Border } from "../GlobalStyles";
+import { Padding, Color, Border } from "../../GlobalStyles";
 import { Chip } from 'react-native-paper';
-import { TabsProvider, Tabs, TabScreen } from 'react-native-paper-tabs';
 import ListComponent from '../../components/ListComponent';
+import TimelineComponent from '../../components/TimelineComponent';
+
+import { TabsProvider, Tabs, TabScreen } from 'react-native-paper-tabs';
+import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
 
 const UserMain = ({navigation, route, options, back}) => {
 
@@ -27,39 +32,33 @@ const UserMain = ({navigation, route, options, back}) => {
           mode="scrollable"
           showLeadingSpace={false}
         >
-          <TabScreen label="All" icon="calendar">
+          <TabScreen label="All" icon={() => <MaterialCommunityIcons name="sitemap-outline" size={24} color="black" />}>
             <ListComponent />
           </TabScreen>
 
-          <TabScreen label="Todos" icon="calendar">
+          <TabScreen label="Todos" icon={() => <MaterialIcons name="checklist" size={24} color="black" />}>
             <TimelineComponent />
           </TabScreen>
 
-          <TabScreen label="Messages" icon="calendar">
+          <TabScreen label="Messages" icon={() => <AntDesign name="message1" size={24} color="black" />}>
             <ListComponent />
           </TabScreen>
 
-          <TabScreen label="Line Notes" icon="calendar">
+          <TabScreen label="Line Notes" icon={() => <MaterialIcons name="notes" size={24} color="black" />}>
             <ListComponent />
           </TabScreen>
 
-          <TabScreen label="Costumes" icon="calendar">
+          <TabScreen label="Costumes" icon={() => <FontAwesome6 name="masks-theater" size={24} color="black" />}>
             <ListComponent />
           </TabScreen>
 
-          <TabScreen label="Props" icon="calendar">
+          <TabScreen label="Props" icon={() => <AntDesign name="shoppingcart" size={24} color="black" />}>
             <ListComponent />
           </TabScreen>
         </Tabs>
       </TabsProvider>
-  )
-};
-
-      <NavBarBottom timelineData={timelineData} agendaItems={agendaItems} />
-
+      <NavBarBottom/>
     </View>
-
-
   );
 };
 

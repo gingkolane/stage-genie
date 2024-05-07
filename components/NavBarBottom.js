@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
-import StageRoute from "../screens/StageRoute";
-import CastcrewRoute from '../screens/CastcrewRoute';
-import ItemRoute from '../screens/ItemRoute';
+import StageRoute from "../screens/resourceRoutes/StageRoute";
+import CastCrewRoute from '../screens/resourceRoutes/CastCrewRoute';
+import PropCostumeRouteRoute from '../screens/resourceRoutes/PropCostumeRoute';
 import DocumentRoute from '../screens/resourceRoutes/DocumentRoute';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import GenieRoute from '../screens/GenieRoute';
-
+import GenieRoute from '../screens/resourceRoutes/GenieRoute';
 
 const NavBarBottom = ({timelineData, agendaItems}) => {
 
@@ -14,19 +12,18 @@ const NavBarBottom = ({timelineData, agendaItems}) => {
 
   const [routes] = React.useState([
     { key: 'stage', title: 'Stage', focusedIcon: 'theater', unfocusedIcon: 'theater-outline' },
-    { key: 'cast&Crew', title: 'Cast&Crew', focusedIcon: 'account-group', unfocusedIcon: 'account-group-outline'},
+    { key: 'cast_crew', title: 'Cast&Crew', focusedIcon: 'account-group', unfocusedIcon: 'account-group-outline'},
     { key: 'genie', title: 'Genie', focusedIcon: 'oil-lamp', unfocusedIcon: 'oil-lamp-outline'},
-    { key: 'props&Costumes', title: 'Props&Costumes', focusedIcon:'drama-masks', unfocusedIcon: 'drama-masks-outline'},
-    { key: 'documents', title: 'Documents', focusedIcon: 'text-box-multiple', unfocusedIcon: 'text-box-multiple-outline' },
+    { key: 'prop_costume', title: 'Props&Costumes', focusedIcon:'drama-masks', unfocusedIcon: 'drama-masks-outline'},
+    { key: 'document', title: 'Documents', focusedIcon: 'text-box-multiple', unfocusedIcon: 'text-box-multiple-outline' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    // can add data to each route, for example, stage: () => <StageRoute data={timelineData} />, can add data to each route
-    stage: () => <StageRoute/>,
-    cast_crew: () => <CastcrewRoute/>,
-    genie: () => <GenieRoute/>,
-    Item: () => <ItemRoute/>,
-    Document: () => <DocumentRoute/>
+      stage: () => <StageRoute/>,
+      cast_crew: () => <CastCrewRoute/>,
+      genie: () => <GenieRoute/>,
+      prop_costume: () => <PropCostumeRoute/>,
+      document: () => <DocumentRoute/>
   });
 
   return (

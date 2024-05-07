@@ -4,9 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Text, Button } from 'react-native-paper';
 import { useForm, Controller } from 'react-hook-form';
-import textExtractor from './screens/setupShow/textExtractor'; // Assuming textExtractor is a screen in the same directory
-import userMain from './screens/userMain'; // Assuming userMain is a screen in the same directory
-
 
 export default function AddShow() {
 

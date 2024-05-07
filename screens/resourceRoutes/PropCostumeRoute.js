@@ -3,7 +3,7 @@ import { Chip } from 'react-native-paper';
 import { TabsProvider, Tabs, TabScreen } from 'react-native-paper-tabs';
 import ListComponent from '../../components/ListComponent';
 
-const PropRoute = ({data}) => {
+export default function PropCostumeRoute({data}){
 
   return (
     <TabsProvider defaultIndex={0}>
@@ -36,5 +36,3 @@ const PropRoute = ({data}) => {
     </TabsProvider>
   )
 };
-
-export default PropRoute;

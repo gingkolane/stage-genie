@@ -6,7 +6,7 @@ import { PaperProvider } from 'react-native-paper';
 // setup
 import Welcome from "./screens/setup/Welcome";
 import AddShow from "./screens/setup/AddShow";
-import TextExtractor from "./screens/setup/TextExtractor";
+import ScriptExtractor from "./screens/setup/ScriptExtractor";
 //users
 import LogIn from './screens/users/LogIn';
 import SignUp from './screens/users/SignUp';
@@ -32,9 +32,9 @@ const App = () => {
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
           <Stack.Screen name="AddShow" component={AddShow} />
-          <Stack.Screen name="TextExtractor" component={TextExtractor}/>
+          <Stack.Screen name="ScriptExtractor" component={ScriptExtractor}/>
 
-          <Stack.Group initialParams= {{user}}>
+          <Stack.Group initialParams= {{CastCrewRoute}}>
             <Stack.Screen name="UserMain" component={UserMain}/>
             <Stack.Screen name="StageRoute" component={StageRoute} options={{ title: 'Stage Design' }}/>
             <Stack.Screen name="CastCrewRoute" component={CastCrewRoute} options={{ title: 'Cast & Crew'}}/> 

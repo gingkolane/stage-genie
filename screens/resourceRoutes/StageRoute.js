@@ -3,7 +3,7 @@ import { Chip } from 'react-native-paper';
 import { TabsProvider, Tabs, TabScreen } from 'react-native-paper-tabs';
 import ListComponent from '../../components/ListComponent';
 
-const StageRoute = ({data}) => {
+export default function StageRoute({data}) {
 
   return (
     <TabsProvider defaultIndex={0}>
@@ -36,5 +36,3 @@ const StageRoute = ({data}) => {
     </TabsProvider>
   )
 };
-
-export default StageRoute;

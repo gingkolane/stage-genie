@@ -36,4 +36,4 @@ const DocumentRoute = ({data}) => {
   )
 };
 
-export default PropsRoute;
+export default DocumentRoute;

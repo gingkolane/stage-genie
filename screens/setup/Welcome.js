@@ -33,15 +33,6 @@ export default function Welcome() {
         <Button mode="contained" onPress={() => navigation.navigate(LogIn)}>
           Log In
         </Button>
-
-
-
-
-
-
-
-
-
         
       </View>
 

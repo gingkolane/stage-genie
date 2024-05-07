@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Text, Button } from 'react-native-paper';
 import { useForm, Controller } from 'react-hook-form';
-import AddShow from '../setup/AddShow'; // Assuming AddShow is a screen in the same directory
+import UserMain from './UserMain';
 
 export default function LogIn() {
   const navigation = useNavigation();
@@ -17,7 +17,7 @@ export default function LogIn() {
   //   setTimeout(() => {
   //     if (data.email === 'test@test.com' && data.password === 'password') {
   //       Alert.alert('Success', 'Logged in successfully');
-        navigation.navigate('userMain'); // Navigate to home screen
+        navigation.navigate('UserMain'); // Navigate to home screen
   //     } else {
   //       Alert.alert('Error', 'Invalid email or password');
   //     }
