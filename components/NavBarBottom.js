@@ -5,27 +5,33 @@ import CastCrewRoute from '../screens/resourceRoutes/CastCrewRoute';
 import PropCostumeRouteRoute from '../screens/resourceRoutes/PropCostumeRoute';
 import DocumentRoute from '../screens/resourceRoutes/DocumentRoute';
 import GenieRoute from '../screens/resourceRoutes/GenieRoute';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-const NavBarBottom = ({timelineData, agendaItems}) => {
+// routeItem should have at least title and icon
+const routeItems = [
+  {title: 'Stage', icon: 'theater', routeName: 'StageRoute'}, 
+  {title: 'Cast&Crew', icon: 'account-group', routeName: 'CastCrewRoute'}, 
+  {title: 'Genie', icon: 'oil-lamp', routeName: 'GenieRoute'}, 
+  {title: 'Props&Costumes', icon: 'drama-masks', routeName: 'PropCostumeRoute'}, 
+  {title: 'Documents', icon: 'text-box-multiple', routeName: 'DocumentRoute'}
+]
+
+// use react native paper bottom navigation to display the bottom navigation bar
+const NavBarBottom = () => {
+
+  const navRoutes = routeItems.map(routeItem => ({...routeItem, key: routeItem.title}));
 
   const [index, setIndex] = React.useState(0);
 
-  const [routes] = React.useState([
-    { key: 'stage', title: 'Stage', focusedIcon: 'theater', unfocusedIcon: 'theater-outline' },
-    { key: 'cast_crew', title: 'Cast&Crew', focusedIcon: 'account-group', unfocusedIcon: 'account-group-outline'},
-    { key: 'genie', title: 'Genie', focusedIcon: 'oil-lamp', unfocusedIcon: 'oil-lamp-outline'},
-    { key: 'prop_costume', title: 'Props&Costumes', focusedIcon:'drama-masks', unfocusedIcon: 'drama-masks-outline'},
-    { key: 'document', title: 'Documents', focusedIcon: 'text-box-multiple', unfocusedIcon: 'text-box-multiple-outline' },
-  ]);
+  const [routes] = React.useState(navRoutes);
 
-  const renderScene = BottomNavigation.SceneMap({
-      stage: () => <StageRoute/>,
-      cast_crew: () => <CastCrewRoute/>,
-      genie: () => <GenieRoute/>,
-      prop_costume: () => <PropCostumeRoute/>,
-      document: () => <DocumentRoute/>
-  });
-
+  const renderScene = BottomNavigation.SceneMap(
+    navRoutes.reduce((scenes, navRoute) => {
+      scenes[navRoute.title] = navRoute.routeName;
+      return scenes;
+    }, {})
+  );
+  
   return (
     <BottomNavigation
       navigationState={{ index, routes }}

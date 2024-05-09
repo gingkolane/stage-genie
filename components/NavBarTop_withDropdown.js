@@ -34,6 +34,21 @@ export default function NavBarTop({
           visible={visible}
           onDismiss={closeMenu}
         >
+            <Menu.Item
+              onPress={() => {navigation.navigate('LogIn')}}
+              title="Oliver"
+            />
+            <Menu.Item
+              onPress={() => { navigation.navigate('SignUp') }}
+              title="Lizzie"
+            />
+            <Menu.Item
+              onPress={() => {
+                console.log('Option 3 was pressed');
+              }}
+              title="Option 3"
+              disabled
+            />
         </Menu>
 
       <Appbar.Action icon="magnify" style={{height:20}} onPress={() => { }}/>

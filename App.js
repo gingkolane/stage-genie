@@ -26,7 +26,8 @@ const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
+        <Stack.Navigator initialRouteName="UserMain" screenOptions={{headerShown: false}}>
+          <Stack.Screen name="UserMain" component={UserMain}/>
           <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="LogIn" component={LogIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
@@ -34,8 +35,8 @@ const App = () => {
           <Stack.Screen name="AddShow" component={AddShow} />
           <Stack.Screen name="ScriptExtractor" component={ScriptExtractor}/>
 
+
           <Stack.Group initialParams= {{CastCrewRoute}}>
-            <Stack.Screen name="UserMain" component={UserMain}/>
             <Stack.Screen name="StageRoute" component={StageRoute} options={{ title: 'Stage Design' }}/>
             <Stack.Screen name="CastCrewRoute" component={CastCrewRoute} options={{ title: 'Cast & Crew'}}/> 
             <Stack.Screen name="GenieRoute" component={GenieRoute} options={{ title: 'Hi, Genie!'}}/> 
